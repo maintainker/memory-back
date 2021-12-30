@@ -8,7 +8,7 @@ const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || "";
 
 const MONGO_PW = process.env.MONGO_PW || "";
 const MONGO_NAME = process.env.MONGO_NAME || "";
-const MONGO_URI = `mongodb+srv://${MONGO_NAME}:${MONGO_PW}@cluster0.qjioi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const MONGO_URI = `mongodb+srv://${MONGO_NAME}:${MONGO_PW}@cluster0.qjioi.mongodb.net/memory?retryWrites=true&w=majority`;
 
 const PHONE_KEY = process.env.PHONE_KEY || "";
 const PHONE_IV = process.env.PHONE_IV || "";

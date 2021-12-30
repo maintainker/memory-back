@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import logging from "../../../config/logging";
-import { findUserbyId, createUser } from "../../../service/user";
+import { findUserbyEmail, createUser } from "../../../service/user";
 import { generateToken, hashEncrypt } from "../../../config/crypto";
 import { CustomRequest } from "../../../@types/default.body";
 import { registerInput } from "../../../service/user/user.dtos";
@@ -9,7 +9,7 @@ const NAMESPACE = "user/controller";
 const registUser = async (req: CustomRequest<registerInput>, res: Response) => {
   const { email, password, name } = req.body;
   try {
-    const isUser = await findUserbyId(email);
+    const isUser = await findUserbyEmail(email);
     if (isUser) {
       throw {
         message: "동일한 아이디로 가입이 되어있습니다.",
